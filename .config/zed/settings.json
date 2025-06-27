@@ -1,0 +1,282 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // The name of the Zed theme to use for the UI.
+  "theme": "One Dark",
+  // The name of a base set of key bindings to use.
+  "base_keymap": "VSCode",
+  // Features that can be globally enabled or disabled
+  "features": {
+    // Which edit prediction provider to use.
+    "edit_prediction_provider": "copilot"
+  },
+  // The name of a font to use for rendering text in the editor
+  "buffer_font_family": "Fira Code",
+  // The OpenType features to enable for text in the editor.
+  "buffer_font_features": {
+    // Disable ligatures:
+    // "calt": false
+  },
+  // The default font size for text in the editor
+  "buffer_font_size": 15,
+  // The weight of the editor font in standard CSS units from 100 to 900.
+  "buffer_font_weight": 400,
+  // Set the buffer's line height.
+  // May take 3 values:
+  //  1. Use a line height that's comfortable for reading (1.618)
+  //         "buffer_line_height": "comfortable"
+  //  2. Use a standard line height, (1.3)
+  //         "buffer_line_height": "standard",
+  //  3. Use a custom line height
+  //         "buffer_line_height": {
+  //           "custom": 2
+  //         },
+  "buffer_line_height": "comfortable",
+  // Layout mode of the bottom dock. Defaults to "contained"
+  "bottom_dock_layout": "contained",
+  // Whether to enable vim modes and key bindings.
+  "vim_mode": false,
+  "agent": {
+    // Version of this setting.
+    "version": "2",
+    // Whether the agent is enabled.
+    "enabled": true,
+    /// What completion mode to start new threads in, if available. Can be 'normal' or 'burn'.
+    "preferred_completion_mode": "normal",
+    // Whether to show the agent panel button in the status bar.
+    "button": true,
+    // Where to dock the agent panel. Can be 'left', 'right' or 'bottom'.
+    "dock": "right",
+    // Default width when the agent panel is docked to the left or right.
+    "default_width": 640,
+    // Default height when the agent panel is docked to the bottom.
+    "default_height": 320,
+    // The default model to use when creating new threads.
+    "default_model": {
+      // The provider to use.
+      "provider": "zed.dev",
+      // The model to use.
+      "model": "claude-sonnet-4"
+    },
+    // Additional parameters for language model requests. When making a request to a model, parameters will be taken
+    // from the last entry in this list that matches the model's provider and name. In each entry, both provider
+    // and model are optional, so that you can specify parameters for either one.
+    "model_parameters": [
+      // To set parameters for all requests to OpenAI models:
+      // {
+      //   "provider": "openai",
+      //   "temperature": 0.5
+      // }
+      //
+      // To set parameters for all requests in general:
+      // {
+      //   "temperature": 0
+      // }
+      //
+      // To set parameters for a specific provider and model:
+      // {
+      //   "provider": "zed.dev",
+      //   "model": "claude-sonnet-4",
+      //   "temperature": 1.0
+      // }
+    ]
+  },
+  // When to automatically save edited buffers. This setting can
+  // take four values.
+  //
+  // 1. Never automatically save:
+  //     "autosave": "off",
+  // 2. Save when changing focus away from the Zed window:
+  //     "autosave": "on_window_change",
+  // 3. Save when changing focus away from a specific buffer:
+  //     "autosave": "on_focus_change",
+  // 4. Save when idle for a certain amount of time:
+  //     "autosave": { "after_delay": {"milliseconds": 500} },
+  "autosave": "off",
+  // Control what info is collected by Zed.
+  "telemetry": {
+    // Send debug info like crash reports.
+    "diagnostics": false,
+    // Send anonymized usage data like what languages you're using Zed with.
+    "metrics": false
+  },
+  // Settings specific to the terminal
+  "terminal": {
+    // What shell to use when opening a terminal. May take 3 values:
+    // 1. Use the system's default terminal configuration in /etc/passwd
+    //      "shell": "system"
+    // 2. A program:
+    //      "shell": {
+    //        "program": "sh"
+    //      }
+    // 3. A program with arguments:
+    //     "shell": {
+    //         "with_arguments": {
+    //           "program": "/bin/bash",
+    //           "args": ["--login"]
+    //         }
+    //     }
+    "shell": "system",
+    // Set the terminal's line height.
+    // May take 3 values:
+    //  1. Use a line height that's comfortable for reading, 1.618
+    //         "line_height": "comfortable"
+    //  2. Use a standard line height, 1.3. This option is useful for TUIs,
+    //      particularly if they use box characters
+    //         "line_height": "standard",
+    //  3. Use a custom line height.
+    //         "line_height": {
+    //           "custom": 2
+    //         },
+    "line_height": "comfortable",
+    // Activate the python virtual environment, if one is found, in the
+    // terminal's working directory (as resolved by the working_directory
+    // setting). Set this to "off" to disable this behavior.
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".env", "env", ".venv", "venv"],
+        "activate_script": "fish"
+      }
+    }
+  },
+  // The extensions that Zed should automatically install on startup.
+  "auto_install_extensions": {
+    "fish": true,
+    "golangci-lint": true,
+    "html": true,
+    "lua": true,
+    "toml": true
+  },
+  // Different settings for specific languages.
+  "languages": {
+    "C": {
+      "format_on_save": "off",
+      "use_on_type_format": false,
+      "prettier": {
+        "allowed": false
+      }
+    },
+    "C++": {
+      "format_on_save": "off",
+      "use_on_type_format": false,
+      "prettier": {
+        "allowed": false
+      }
+    },
+    "CSS": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "Diff": {
+      "show_edit_predictions": false,
+      "remove_trailing_whitespace_on_save": false,
+      "ensure_final_newline_on_save": false
+    },
+    "Git Commit": {
+      "allow_rewrap": "anywhere",
+      "soft_wrap": "editor_width",
+      "preferred_line_length": 72
+    },
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "debuggers": ["Delve"]
+    },
+    "HTML": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "JavaScript": {
+      "language_servers": ["!typescript-language-server", "vtsls", "..."],
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "LaTeX": {
+      "formatter": "language_server",
+      "language_servers": ["texlab", "..."],
+      "prettier": {
+        "allowed": true,
+        "plugins": ["prettier-plugin-latex"]
+      }
+    },
+    "Markdown": {
+      "format_on_save": "on",
+      "use_on_type_format": false,
+      "allow_rewrap": "anywhere",
+      "soft_wrap": "editor_width",
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "Plain Text": {
+      "allow_rewrap": "anywhere"
+    },
+    "Python": {
+      "debuggers": ["Debugpy"]
+    },
+    "Rust": {
+      "debuggers": ["CodeLLDB"]
+    },
+    "TypeScript": {
+      "language_servers": ["!typescript-language-server", "vtsls", "..."],
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "XML": {
+      "prettier": {
+        "allowed": true,
+        "plugins": ["@prettier/plugin-xml"]
+      }
+    },
+    "YAML": {
+      "prettier": {
+        "allowed": true
+      }
+    }
+  },
+  // Jupyter settings
+  "jupyter": {
+    "enabled": true
+    // Specify the language name as the key and the kernel name as the value.
+    // "kernel_selections": {
+    //    "python": "conda-base"
+    //    "typescript": "deno"
+    // }
+  },
+  // Vim settings
+  "vim": {
+    "default_mode": "normal",
+    "toggle_relative_line_numbers": false,
+    "use_system_clipboard": "always",
+    "use_multiline_find": false,
+    "use_smartcase_find": false,
+    "highlight_on_yank_duration": 200,
+    "custom_digraphs": {},
+    // Cursor shape for the each mode.
+    // Specify the mode as the key and the shape as the value.
+    // The mode can be one of the following: "normal", "replace", "insert", "visual".
+    // The shape can be one of the following: "block", "bar", "underline", "hollow".
+    "cursor_shape": {}
+  },
+  // Whether to read ~/.ssh/config for ssh connection sources.
+  "read_ssh_config": true
+}
