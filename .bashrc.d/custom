@@ -1,6 +1,6 @@
 ### EXPORT ###
-export EDITOR="vi"                      # $EDITOR use vi in terminal
-export PAGER="less"			# $PAGER use less in terminal
+export EDITOR="vim"     # $EDITOR use vim in terminal
+export PAGER="less"     # $PAGER use less in terminal
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/go/bin" ]]; then
